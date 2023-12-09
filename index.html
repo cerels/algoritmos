@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>CUESTIONARIO DE ALGORITMOS</title>
+  </head>
+  <body>
+    <!-- pregunta 1 -->
+   <div>
+        
+        <h4>Hacer un algoritmo que imprima el nombre de un producto, clave, precio
+            original y su total con descuento. El descuento lo hace en base a la clave,
+            Si la clave es 01 el descuento es del 10% y si la clave es 02 el descuento
+            en del 20% (sólo existen dos claves).</h4>
+    
+        <form id="productForm1">
+          <label for="productName1">Nombre del Producto:</label>
+          <input
+            type="text"
+            id="productName1"
+            required
+          />
+    <br>
+    <label for="productKey1">Clave del Producto:</label>
+    <select id="productKey1" required>
+      <option value="01">01</option>
+      <option value="02">02</option>
+    </select>
+    
+    <br>
+          <label for="productPrice1">Precio Original:</label>
+          <input
+            type="number"
+            id="productPrice1"
+            min="0"
+            step="0.01"
+            required
+          />
+    <br>
+          <button
+            type="button"
+            onclick="calcularDescuento1()"
+          >
+            Calcular Descuento
+          </button>
+        </form>
+    
+        <h2>Resultado:</h2>
+        <p id="result1"></p>
+   </div>
+    <!-- pregunta 2 -->
+    <div>
+        
+        <h4>Hacer un algoritmo que calcule el total a pagar por la compra de camisas,
+            precio de las camisas 25000. Si se compran tres camisas o más se aplica
+            un descuento del 20% sobre el total de la compra y si son menos de tres
+            camisas un descuento del 10%</h4>
+    
+        <form id="shirtForm">
+          <label for="shirtQuantity">Cantidad de Camisas:</label>
+          <input
+            type="number"
+            id="shirtQuantity"
+            min="0"
+            required
+          />
+    <br>
+          <button
+            type="button"
+            onclick="calcularTotalPagar()"
+          >
+            Calcular Total a Pagar
+          </button>
+        </form>
+    
+        <h2>Resultado:</h2>
+        <p id="result2"></p>
+   </div>
+    <!-- pregunta 3 -->
+    <div>
+        
+        <h4>En un supermercado se hace una promoción, mediante la cual el cliente
+            obtiene un descuento dependiendo de un número que se escoge al azar. Los
+            números deben estar entre 1 y 10. Si el número escogido es menor que
+            10 el descuento es del 15% sobre el total de la compra, si es menor o igual
+            a 5 el descuento es del 20%. Obtener cuánto dinero se le descuenta.</h4>
+    
+        <form id="discountForm">
+          <label for="randomNumber">Número Escogido (1-10):</label>
+          <input
+            type="number"
+            id="randomNumber"
+            min="1"
+            max="10"
+            required
+          />
+    <br>
+          <label for="totalPurchase">Total de la Compra:</label>
+          <input
+            type="number"
+            id="totalPurchase"
+            min="0"
+            step="0.01"
+            required
+          />
+    <br>
+          <button
+            type="button"
+            onclick="calcularDescuentoSupermercado()"
+          >
+            Calcular Descuento
+          </button>
+        </form>
+    
+        <h2>Resultado:</h2>
+        <p id="result3"></p>
+   </div>
+   <!-- pregunta 4 -->
+   <div>
+        
+    <h4>Calcular el número de pulsaciones que debe tener una persona por cada 10
+        segundos de ejercicio aeróbico. La fórmula que se aplica cuando el sexo es
+        femenino es:
+        num. pulsaciones ← (220 - edad)/10
+        y si el sexo es masculino:
+        num. pulsaciones ← (210 - edad)/10</h4>
+
+    <form id="heartRateForm">
+      <label for="age">Edad:</label>
+      <input
+        type="number"
+        id="age"
+        min="1"
+        required
+      />
+<br>
+      <label for="gender">Sexo:</label>
+      <select id="gender" required>
+        <option value="femenino">Femenino</option>
+        <option value="masculino">Masculino</option>
+      </select>
+<br>
+      <button
+        type="button"
+        onclick="calcularPulsaciones()"
+      >
+        Calcular Pulsaciones
+      </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result4"></p>
+</div>
+ <!-- pregunta 5 -->
+ <div>
+        
+    <h4>Elabore un algoritmo que lea un número negativo e imprima el número y el
+        positivo del mismo.</h4>
+
+    <form id="negativeNumberForm">
+      <label for="negativeNumber">Número Negativo:</label>
+      <input
+        type="number"
+        id="negativeNumber"
+        required
+      />
+<br>
+      <button
+        type="button"
+        onclick="calcularPositivo()"
+      >
+        Calcular Positivo
+      </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result5"></p>
+</div>
+<!-- pregunta 6  -->
+<div>
+    <h4>Hacer un algoritmo que permita pasar de kilogramos a gramos y toneladas.</h4>
+
+    <form id="weightConversionForm">
+        <label for="kilograms">Peso en Kilogramos:</label>
+        <input
+            type="number"
+            id="kilograms"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="convertirUnidades()"
+        >
+            Convertir Unidades
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result6"></p>
+</div>
+<!-- pregunta 7 -->
+<div>
+    <h4>Un paquete de galletas cuesta $3.500 y contiene 15 galletas, cuánto
+        cuestan X cantidad de galletas de ellas? Elabore un algoritmo para obtener
+        la respuesta.</h4>
+
+    <form id="cookieCostForm">
+        <label for="quantity">Cantidad de Galletas:</label>
+        <input
+            type="number"
+            id="quantity"
+            min="0"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="calcularCostoGalletas()"
+        >
+            Calcular Costo
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result7"></p>
+</div>
+<!-- pregunta 8 -->
+<div>
+    <h4>Si 15 cuadernos cuestan $75,000, cuánto cuestan X cantidad de
+        cuadernos? Elabore un algoritmo para hallar la respuesta correcta.</h4>
+
+    <form id="notebookCostForm">
+        <label for="quantityNotebooks">Cantidad de Cuadernos:</label>
+        <input
+            type="number"
+            id="quantityNotebooks"
+            min="0"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="calcularCostoCuadernos()"
+        >
+            Calcular Costo
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result8"></p>
+</div>
+<!-- pregunta 9 -->
+<div>
+    <h4>Realizar un programa que cuente de 1 a 200 e imprima en pantalla los
+        números divisibles por 6, y cuando llegue a 200 cuente de forma regresiva
+        hasta 20 e imprima los divisibles por 8.</h4>
+
+    <button
+        type="button"
+        onclick="contarDivisibles()"
+    >
+        Iniciar Conteo
+    </button>
+
+    <h2>Resultado:</h2>
+    <p id="result9"></p>
+</div>
+<!-- pregunta 10 -->
+<div>
+    <h4>Realizar un programa que capture el nombre de dos personas y las fechas
+        de nacimiento con cada campo por separado día, mes y año y calcule la
+        edad de dos personas diferentes y diga cuál de ellos es mayor.</h4>
+
+    <form id="ageComparisonForm">
+        <label for="namePerson1">Nombre Persona 1:</label>
+        <input
+            type="text"
+            id="namePerson1"
+            required
+        />
+        <br>
+        <label for="dayOfBirthPerson1">Día de Nacimiento:</label>
+        <input
+            type="number"
+            id="dayOfBirthPerson1"
+            min="1"
+            max="31"
+            required
+        />
+        <label for="monthOfBirthPerson1">Mes de Nacimiento:</label>
+        <input
+            type="number"
+            id="monthOfBirthPerson1"
+            min="1"
+            max="12"
+            required
+        />
+        <label for="yearOfBirthPerson1">Año de Nacimiento:</label>
+        <input
+            type="number"
+            id="yearOfBirthPerson1"
+            min="1900"
+            max="2023"
+            required
+        />
+        <br><br>
+
+        <label for="namePerson2">Nombre Persona 2:</label>
+        <input
+            type="text"
+            id="namePerson2"
+            required
+        />
+        <br>
+        <label for="dayOfBirthPerson2">Día de Nacimiento:</label>
+        <input
+            type="number"
+            id="dayOfBirthPerson2"
+            min="1"
+            max="31"
+            required
+        />
+        <label for="monthOfBirthPerson2">Mes de Nacimiento:</label>
+        <input
+            type="number"
+            id="monthOfBirthPerson2"
+            min="1"
+            max="12"
+            required
+        />
+        <label for="yearOfBirthPerson2">Año de Nacimiento:</label>
+        <input
+            type="number"
+            id="yearOfBirthPerson2"
+            min="1900"
+            max="2023"
+            required
+        />
+        <br><br>
+
+        <button
+            type="button"
+            onclick="calcularEdadYComparar()"
+        >
+            Calcular y Comparar Edades
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result10"></p>
+</div>
+<!-- pregunta 11 -->
+<div>
+    <h4>Un programa que capture el salario de un empleado y realice el
+        descuento de pensión y salud, pero si el salario es superior a $1,200,000 no le
+        debe descontar.</h4>
+
+    <form id="salaryDeductionForm">
+        <label for="salary">Salario del Empleado:</label>
+        <input
+            type="number"
+            id="salary"
+            min="0"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="realizarDescuentos()"
+        >
+            Realizar Descuentos
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result11"></p>
+</div>
+<!-- pregunta 12 -->
+<div>
+    <h4>Un programa que capture el salario de un empleado, lo divida por 30
+        días del mes, también capture los días trabajados y muestre el total ganado.</h4>
+
+    <form id="salaryCalculationForm">
+        <label for="monthlySalary">Salario Mensual del Empleado:</label>
+        <input
+            type="number"
+            id="monthlySalary"
+            min="0"
+            required
+        />
+        <br>
+        <label for="workedDays">Días Trabajados:</label>
+        <input
+            type="number"
+            id="workedDays"
+            min="0"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="calcularTotalGanado()"
+        >
+            Calcular Total Ganado
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result12"></p>
+</div>
+<!-- pregunta 13 -->
+<div>
+    <h4>Mientras a<=1500; contar hasta 1500 e imprimir los números divisibles por
+        4 y 5 y decir si son pares o impares.</h4>
+
+    <button
+        type="button"
+        onclick="contarDivisiblesYClasificar()"
+    >
+        Contar y Clasificar Números
+    </button>
+
+    <h2>Resultado:</h2>
+    <p id="result13"></p>
+</div>
+<!-- pregunta 14 -->
+<div>
+    <h4>Elaborar un algoritmo que tenga 10 números enteros. El programa debe
+        sumar todos los números que sean múltiplos de 3. Los 10 números son elegidos al azar.</h4>
+
+    <button
+        type="button"
+        onclick="sumarMultiplosDeTres()"
+    >
+        Sumar Múltiplos de 3
+    </button>
+
+    <h2>Resultado:</h2>
+    <p id="result14"></p>
+</div>
+<!-- pregunta 15 -->
+<div>
+    <h4>Mostrar las 30 primeras potencias de 3 y la suma de ellas.</h4>
+
+    <button
+        type="button"
+        onclick="calcularPotenciasYSuma()"
+    >
+        Calcular Potencias y Suma
+    </button>
+
+    <h2>Resultado:</h2>
+    <p id="result15"></p>
+</div>
+<!-- pregunta 16 -->
+<div>
+    <h4>Un programa con 5 alumnos cada uno con 5 notas, calcular el promedio de
+        sus notas por alumnos y solo muestra los que ganaron.</h4>
+
+    <button
+        type="button"
+        onclick="calcularPromedioYMostrarGanadores()"
+    >
+        Calcular Promedio y Mostrar Ganadores
+    </button>
+
+    <h2>Resultado:</h2>
+    <p id="result16"></p>
+</div>
+<!-- pregunta 17 -->
+<div>
+    <h4>Diseñar un algoritmo para calcular el residuo y el cociente de una división.</h4>
+
+    <form id="divisionForm">
+        <label for="dividend">Dividendo:</label>
+        <input
+            type="number"
+            id="dividend"
+            required
+        />
+        <br>
+        <label for="divisor">Divisor:</label>
+        <input
+            type="number"
+            id="divisor"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="calcularResiduoYCociente()"
+        >
+            Calcular Residuo y Cociente
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result17"></p>
+</div>
+<!-- pregunta 18 -->
+<div>
+    <h4>Diseñar un algoritmo que intercambie los valores de dos variables numéricas.</h4>
+
+    <form id="swapVariablesForm">
+        <label for="variable1">Variable 1:</label>
+        <input
+            type="number"
+            id="variable1"
+            required
+        />
+        <br>
+        <label for="variable2">Variable 2:</label>
+        <input
+            type="number"
+            id="variable2"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="intercambiarVariables()"
+        >
+            Intercambiar Variables
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result18"></p>
+</div>
+<!-- pregunta 19 -->
+<div>
+    <h4>Diseñar un algoritmo que permita ingresar un valor inicial y luego un
+        valor final, para calcular el valor central de los números.</h4>
+
+    <form id="centralValueForm">
+        <label for="initialValue">Valor Inicial:</label>
+        <input
+            type="number"
+            id="initialValue"
+            required
+        />
+        <br>
+        <label for="finalValue">Valor Final:</label>
+        <input
+            type="number"
+            id="finalValue"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="calcularValorCentral()"
+        >
+            Calcular Valor Central
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result19"></p>
+</div>
+<!-- pregunta 20 -->
+<div>
+    <h4>Calcular independientemente la suma de los números pares e impares comprendidos entre 1 y 50.</h4>
+
+    <button
+        type="button"
+        onclick="calcularSumaParesEImpares()"
+    >
+        Calcular Suma Pares e Impares
+    </button>
+
+    <h2>Resultado:</h2>
+    <p id="result20"></p>
+</div>
+<!-- pregunta 21 -->
+<div>
+    <h4>Determinar el promedio de una lista de 20 números positivos (números aleatorios).</h4>
+
+    <button
+        type="button"
+        onclick="calcularPromedioLista()"
+    >
+        Calcular Promedio
+    </button>
+
+    <h2>Resultado:</h2>
+    <p id="result21"></p>
+</div>
+<!-- pregunta 22 -->
+<div>
+    <h4>Calcular los 5 primeros números impares que preceden a un número N.</h4>
+
+    <form id="oddNumbersForm">
+        <label for="targetNumber">Número N:</label>
+        <input
+            type="number"
+            id="targetNumber"
+            required
+        />
+        <br>
+        <button
+            type="button"
+            onclick="calcularNumerosImparesPrecedentes()"
+        >
+            Calcular Números Impares
+        </button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="result22"></p>
+</div>
+<!-- pregunta 23 -->
+<div>
+    <h4>Mostrar si los cinco primeros números impares son múltiplos de tres, arrancando desde 10.</h4>
+
+    <button
+        type="button"
+        onclick="verificarMultiplosDeTres()"
+    >
+        Verificar Múltiplos de Tres
+    </button>
+
+    <h2>Resultado:</h2>
+    <p id="result23"></p>
+</div>
+
+
+
+  </body>
+  <script src="js/script1.js"></script>
+  <script src="js/script2.js"></script>
+  <script src="js/script3.js"></script>
+  <script src="js/script4.js"></script>
+  <script src="js/script5.js"></script>
+  <script src="js/script6.js"></script>
+  <script src="js/script7.js"></script>
+  <script src="js/script8.js"></script>
+  <script src="js/script9.js"></script>
+  <script src="js/script10.js"></script>
+  <script src="js/script11.js"></script>
+  <script src="js/script12.js"></script>
+  <script src="js/script13.js"></script>
+  <script src="js/script14.js"></script>
+  <script src="js/script15.js"></script>
+  <script src="js/script16.js"></script>
+  <script src="js/script17.js"></script>
+  <script src="js/script18.js"></script>
+  <script src="js/script19.js"></script>
+  <script src="js/script20.js"></script>
+  <script src="js/script21.js"></script>
+  <script src="js/script22.js"></script>
+  <script src="js/script23.js"></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</html>
